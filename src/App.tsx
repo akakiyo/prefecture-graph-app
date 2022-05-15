@@ -1,7 +1,8 @@
 import React from "react";
+import Layout from "./components/Layout/Layout";
 
 function App() {
-  return <div className="App">都道府県のグラフアプリ</div>;
+  return <Layout>都道府県のグラフアプリ</Layout>;
 }
 
 export default App;
