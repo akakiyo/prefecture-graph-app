@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import Header from "./Header/Header";
-import Body from "./Body/Body";
-import Footer from "./Footer/Footer";
+import Header from "./Header";
+import Body from "./Body";
+import Footer from "./Footer";
 
 const Layout = ({ children }: { children?: ReactNode }): JSX.Element => {
   return (
