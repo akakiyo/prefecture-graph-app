@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Header = (): JSX.Element => {
   return (
     <Wrapper>
-      <SiteName>都道府県グラフ</SiteName>
+      <SiteName>人口測る君</SiteName>
       <PageTitleArea>
         <Link to="/" style={{ textDecoration: "none" }}>
           <p>グラフ</p>
