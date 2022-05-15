@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Body = (): JSX.Element => {
-  return <Wrapper>Body</Wrapper>;
+const Footer = (): JSX.Element => {
+  return <Wrapper>Footer</Wrapper>;
 };
 const Wrapper = styled.div``;
 
-export default Body;
+export default Footer;
