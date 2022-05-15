@@ -1,7 +1,13 @@
 import React from "react";
+import Layout from "./components/Layout/Layout";
+import Graph from "./routes/Graph/Graph";
 
 function App() {
-  return <div className="App">都道府県のグラフアプリ</div>;
+  return (
+    <Layout>
+      <Graph />
+    </Layout>
+  );
 }
 
 export default App;
