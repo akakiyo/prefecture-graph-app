@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import axios, { AxiosRequestConfig, AxiosError } from "axios";
 import { DisplayPref } from "../../types/Pref";
@@ -16,11 +16,12 @@ type ResPopulationDataType = {
   value: number;
   year: number;
 };
+
 const PrefCheckBox = (props: PropsType): JSX.Element => {
   const { prefCode, prefName, displayPrefList, setDisplayPrefList } = props;
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const handleChange = () => {
+  const selectPref = () => {
     if (isChecked) {
       setDisplayPrefList(displayPrefList.filter((displayPref: DisplayPref) => displayPref.name !== prefName));
       setIsChecked(!isChecked);
@@ -45,11 +46,13 @@ const PrefCheckBox = (props: PropsType): JSX.Element => {
 
   return (
     <Wrapper>
-      <input type="checkbox" placeholder="-" onChange={() => handleChange()} />
+      <input type="checkbox" placeholder="-" onChange={() => selectPref()} />
       {prefName}
     </Wrapper>
   );
 };
-const Wrapper = styled.span``;
+const Wrapper = styled.div`
+  width: 100px;
+`;
 
 export default PrefCheckBox;
