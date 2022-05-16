@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios, { AxiosRequestConfig, AxiosError } from "axios";
-import { DisplayPref } from "../../types/Pref";
+import { DisplayPref, ResPopulationDataType } from "../../types/Pref";
 
 type PropsType = {
   prefCode: number;
@@ -11,10 +11,6 @@ type PropsType = {
 };
 type ErrorResponse = {
   error: string;
-};
-type ResPopulationDataType = {
-  value: number;
-  year: number;
 };
 
 const PrefCheckBox = (props: PropsType): JSX.Element => {
