@@ -9,7 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Graph />} />
       </Routes>
-      <Graph />
     </Layout>
   );
 }
