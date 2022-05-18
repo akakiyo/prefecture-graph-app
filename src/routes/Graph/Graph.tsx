@@ -6,13 +6,13 @@ import { Pref, DisplayPref } from "../../types/Pref";
 import PrefCheckBox from "./PrefCheckBox";
 import { options } from "./chartOptions";
 
+type ErrorResponse = {
+  error: string;
+};
+
 const Graph = (): JSX.Element => {
   const [prefectureList, setPrefectureList] = useState<Array<Pref>>([]);
   const [displayPrefList, setDisplayPrefList] = useState<Array<DisplayPref>>([]);
-
-  type ErrorResponse = {
-    error: string;
-  };
 
   const getPrefectureList = async () => {
     const getPrefectureListOption: AxiosRequestConfig = {
