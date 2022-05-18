@@ -70,7 +70,7 @@ const InstructionText = styled.div`
   font-weight: bold;
 `;
 const StyledChart = styled(Chart)`
-  width: 720px;
+  width: 70%;
   margin: 4em auto;
 `;
 export default Graph;

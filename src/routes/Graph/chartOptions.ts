@@ -6,8 +6,6 @@ export const options = {
   xaxis: {
     title: {
       text: "年度",
-      offsetX: 200,
-      offsetY: -10,
       style: {
         color: "#000000",
       },
@@ -18,8 +16,7 @@ export const options = {
     title: {
       text: "人口数",
       rotate: 0,
-      offsetX: 0,
-      offsetY: -190,
+
       style: {
         color: "#000000",
       },
