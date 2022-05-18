@@ -1,15 +1,14 @@
 export const options = {
   chart: {
-    foreColor: "black", //テキストの色
-    background: "white", //chartの背景色
+    foreColor: "black",
+    background: "white",
     toolbar: {
-      //ツールバーの設定
       show: true,
       offsetX: -40,
       offsetY: 0,
       tools: {
         download: true,
-        selection: true, //selectionを利用する時はenabledをtrueにする必要がある
+        selection: true,
         zoom: true,
         zoomin: true,
         zoomout: true,

@@ -3,18 +3,15 @@ import Chart from "react-apexcharts";
 import styled from "styled-components";
 
 import axios, { AxiosRequestConfig, AxiosError } from "axios";
-import { Pref, DisplayPref } from "../../types/Pref";
+import { Pref, GraphingPref } from "../../types/Pref";
+import { ErrorResponse } from "../../types/ErrorResponse";
 import PrefCheckBox from "./PrefCheckBox";
 import { options } from "./chartOptions";
 import { MobaileSiteStyle } from "../../styles/styledMediaQuery";
 
-type ErrorResponse = {
-  error: string;
-};
-
 const Graph = (): JSX.Element => {
   const [prefectureList, setPrefectureList] = useState<Array<Pref>>([]);
-  const [displayPrefList, setDisplayPrefList] = useState<Array<DisplayPref>>([]);
+  const [displayPrefList, setDisplayPrefList] = useState<Array<GraphingPref>>([]);
 
   const getPrefectureList = async () => {
     const getPrefectureListOption: AxiosRequestConfig = {
@@ -39,17 +36,18 @@ const Graph = (): JSX.Element => {
   return (
     <Wrapper>
       <PrefCheckBoxArea>
-        {prefectureList.map(
-          (prefecture: Pref): JSX.Element => (
-            <PrefCheckBox
-              key={prefecture.prefCode}
-              prefCode={prefecture.prefCode}
-              prefName={prefecture.prefName}
-              displayPrefList={displayPrefList}
-              setDisplayPrefList={setDisplayPrefList}
-            />
-          )
-        )}
+        {prefectureList &&
+          prefectureList.map(
+            (prefecture: Pref): JSX.Element => (
+              <PrefCheckBox
+                key={prefecture.prefCode}
+                prefCode={prefecture.prefCode}
+                prefName={prefecture.prefName}
+                displayPrefList={displayPrefList}
+                setDisplayPrefList={setDisplayPrefList}
+              />
+            )
+          )}
       </PrefCheckBoxArea>
       {displayPrefList.length === 0 ? (
         <InstructionText>人口を知りたい都道府県をテェックしてください</InstructionText>
@@ -73,7 +71,7 @@ const InstructionText = styled.div`
 `;
 const StyledChart = styled(Chart)`
   width: 700px;
-  ${MobaileSiteStyle`width:350px;`}
   margin: 4em auto;
+  ${MobaileSiteStyle`width:350px;`}
 `;
 export default Graph;
