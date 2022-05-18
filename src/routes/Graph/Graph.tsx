@@ -34,7 +34,7 @@ const Graph = (): JSX.Element => {
   }, []);
 
   return (
-    <Wrapper>
+    <>
       <PrefCheckBoxArea>
         {prefectureList &&
           prefectureList.map(
@@ -54,10 +54,10 @@ const Graph = (): JSX.Element => {
       ) : (
         <StyledChart options={options} series={displayPrefList} type="line" />
       )}
-    </Wrapper>
+    </>
   );
 };
-const Wrapper = styled.div``;
+
 const PrefCheckBoxArea = styled.div`
   display: flex;
   flex-wrap: wrap;

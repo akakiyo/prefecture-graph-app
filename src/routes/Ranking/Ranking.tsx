@@ -76,7 +76,7 @@ const Ranking = (): JSX.Element => {
   }, [selectedYear]);
 
   return (
-    <Wrapper>
+    <>
       <YearRadioButtonArea>
         {years.map((year: number) => {
           return <YearRadioButton key={year} year={year} setSelectedYear={setSelectedYear} />;
@@ -98,10 +98,10 @@ const Ranking = (): JSX.Element => {
       ) : (
         <InstructionText>ランキングを見たい年度を選択してください</InstructionText>
       )}
-    </Wrapper>
+    </>
   );
 };
-const Wrapper = styled.div``;
+
 const YearRadioButtonArea = styled.div`
   display: flex;
   flex-wrap: wrap;
