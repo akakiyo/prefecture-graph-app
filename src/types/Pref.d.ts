@@ -2,7 +2,7 @@ export type Pref = {
   prefCode: number;
   prefName: string;
 };
-export type DisplayPref = {
+export type GraphingPref = {
   name: string;
   data: Array<number>;
 };

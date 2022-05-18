@@ -1,13 +1,26 @@
 export const options = {
   chart: {
-    foreColor: "black", //テキストの色
-    background: "white", //chartの背景色
+    foreColor: "black",
+    background: "white",
+    toolbar: {
+      show: true,
+      offsetX: -40,
+      offsetY: 0,
+      tools: {
+        download: true,
+        selection: true,
+        zoom: true,
+        zoomin: true,
+        zoomout: true,
+        pan: true,
+        reset: true,
+        customIcons: [],
+      },
+    },
   },
   xaxis: {
     title: {
       text: "年度",
-      offsetX: 200,
-      offsetY: -10,
       style: {
         color: "#000000",
       },
@@ -18,8 +31,7 @@ export const options = {
     title: {
       text: "人口数",
       rotate: 0,
-      offsetX: 0,
-      offsetY: -190,
+
       style: {
         color: "#000000",
       },
@@ -27,11 +39,9 @@ export const options = {
   },
   legend: {
     position: "right",
-    offsetX: -40,
-    offsetY: 20,
     showForSingleSeries: true,
     itemMargin: {
-      horizontal: 40,
+      horizontal: 0,
       vertical: 0,
     },
   },

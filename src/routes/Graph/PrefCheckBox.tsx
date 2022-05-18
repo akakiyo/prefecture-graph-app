@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios, { AxiosRequestConfig, AxiosError } from "axios";
-import { DisplayPref, ResPopulationDataType } from "../../types/Pref";
+import { GraphingPref, ResPopulationDataType } from "../../types/Pref";
+import { ErrorResponse } from "../../types/ErrorResponse";
 
 type PropsType = {
   prefCode: number;
   prefName: string;
-  displayPrefList: Array<DisplayPref>;
-  setDisplayPrefList: React.Dispatch<React.SetStateAction<Array<DisplayPref>>>;
-};
-type ErrorResponse = {
-  error: string;
+  displayPrefList: Array<GraphingPref>;
+  setDisplayPrefList: React.Dispatch<React.SetStateAction<Array<GraphingPref>>>;
 };
 
 const PrefCheckBox = (props: PropsType): JSX.Element => {
@@ -19,7 +17,7 @@ const PrefCheckBox = (props: PropsType): JSX.Element => {
 
   const selectPref = (): void => {
     if (isChecked) {
-      setDisplayPrefList(displayPrefList.filter((displayPref: DisplayPref) => displayPref.name !== prefName));
+      setDisplayPrefList(displayPrefList.filter((displayPref: GraphingPref) => displayPref.name !== prefName));
       setIsChecked(!isChecked);
     } else {
       const getPopulationOnePrefOption: AxiosRequestConfig = {
