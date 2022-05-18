@@ -17,7 +17,7 @@ const PrefCheckBox = (props: PropsType): JSX.Element => {
   const { prefCode, prefName, displayPrefList, setDisplayPrefList } = props;
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const selectPref = () => {
+  const selectPref = (): void => {
     if (isChecked) {
       setDisplayPrefList(displayPrefList.filter((displayPref: DisplayPref) => displayPref.name !== prefName));
       setIsChecked(!isChecked);
