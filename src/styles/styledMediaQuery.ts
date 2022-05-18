@@ -3,7 +3,6 @@ const customMedia = generateMedia({
   mobile: "599px",
   desktop: "1025px",
 });
-const MobaileSiteStyle = customMedia.lessThan("mobile");
-const TabletSiteStyle = customMedia.between("mobile", "desktop");
-const PcSiteStyle = customMedia.greaterThan("desktop");
-module.exports = { MobaileSiteStyle, TabletSiteStyle, PcSiteStyle };
+export const MobaileSiteStyle = customMedia.lessThan("mobile");
+export const TabletSiteStyle = customMedia.between("mobile", "desktop");
+export const PcSiteStyle = customMedia.greaterThan("desktop");

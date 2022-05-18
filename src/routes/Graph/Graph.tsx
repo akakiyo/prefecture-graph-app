@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 import styled from "styled-components";
+
 import axios, { AxiosRequestConfig, AxiosError } from "axios";
 import { Pref, DisplayPref } from "../../types/Pref";
 import PrefCheckBox from "./PrefCheckBox";
 import { options } from "./chartOptions";
+import { MobaileSiteStyle } from "../../styles/styledMediaQuery";
 
 type ErrorResponse = {
   error: string;
@@ -70,7 +72,8 @@ const InstructionText = styled.div`
   font-weight: bold;
 `;
 const StyledChart = styled(Chart)`
-  width: 70%;
+  width: 700px;
+  ${MobaileSiteStyle`width:350px;`}
   margin: 4em auto;
 `;
 export default Graph;

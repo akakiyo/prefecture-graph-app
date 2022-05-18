@@ -2,6 +2,22 @@ export const options = {
   chart: {
     foreColor: "black", //テキストの色
     background: "white", //chartの背景色
+    toolbar: {
+      //ツールバーの設定
+      show: true,
+      offsetX: -40,
+      offsetY: 0,
+      tools: {
+        download: true,
+        selection: true, //selectionを利用する時はenabledをtrueにする必要がある
+        zoom: true,
+        zoomin: true,
+        zoomout: true,
+        pan: true,
+        reset: true,
+        customIcons: [],
+      },
+    },
   },
   xaxis: {
     title: {
@@ -24,11 +40,9 @@ export const options = {
   },
   legend: {
     position: "right",
-    offsetX: -40,
-    offsetY: 20,
     showForSingleSeries: true,
     itemMargin: {
-      horizontal: 40,
+      horizontal: 0,
       vertical: 0,
     },
   },
