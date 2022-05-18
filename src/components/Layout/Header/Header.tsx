@@ -1,19 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { slide as SideMenu } from "react-burger-menu";
+import useMediaQuery from "../../../styles/useMediaQuery";
 
 const Header = (): JSX.Element => {
+  const { isMobileSite } = useMediaQuery();
+
   return (
     <Wrapper>
       <SiteName>人口測る君</SiteName>
-      <PageTitleArea>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <p>グラフ</p>
-        </Link>
-        <Link to="/ranking" style={{ textDecoration: "none" }}>
-          <p>ランキング</p>
-        </Link>
-      </PageTitleArea>
+      {isMobileSite ? (
+        <Menu>
+          <SideMenu width={250} right>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <p>グラフ</p>
+            </Link>
+            <Link to="/ranking" style={{ textDecoration: "none" }}>
+              <p>ランキング</p>
+            </Link>
+          </SideMenu>
+        </Menu>
+      ) : (
+        <PageTitleArea>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <p>グラフ</p>
+          </Link>
+          <Link to="/ranking" style={{ textDecoration: "none" }}>
+            <p>ランキング</p>
+          </Link>
+        </PageTitleArea>
+      )}
     </Wrapper>
   );
 };
@@ -28,7 +45,7 @@ const SiteName = styled.div`
   margin: auto auto auto 50px;
   height: 100%;
   color: #00bfff;
-  font-size: 50px;
+  font-size: 40px;
 `;
 const PageTitleArea = styled.div`
   display: flex;
@@ -44,5 +61,53 @@ const PageTitleArea = styled.div`
       text-decoration: underline;
     }
   }
+`;
+const Menu = styled.div`
+  /* margin: 0 0 auto 0; */
+  margin-left: 30px;
+  .bm-burger-bars {
+    background: #67c5ff;
+  }
+  .bm-burger-button {
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    right: 30px;
+    top: 30px;
+  }
+  .bm-burger-bars-hover {
+    background: #005b99;
+  }
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  /* .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  } */
+  .bm-menu {
+    background: white;
+    padding: 2.5em 1.5em 0;
+    font-size: 20px;
+  }
+  /* .bm-morph-shape {
+    fill: #373a47;
+  } */
+  .bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+  .bm-item {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+  }
+  /* .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  } */
 `;
 export default Header;
